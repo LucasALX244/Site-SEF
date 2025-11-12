@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente - Saúde & Forma</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forms.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Header -->
+    <header class="c-header">
+        <!-- Top Bar -->
+<div class="c-header__top-bar">
+    <div class="container">
+        <div class="c-header__top-bar-content">
+            <div class="c-header__contato">
+                <a href="https://api.whatsapp.com/send/?phone=554736226901" class="c-header__contato-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> (47) 3622-6901
+                </a>
+                <a href="mailto:saude_e_forma@hotmail.com" class="c-header__contato-link">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> saude_e_forma@hotmail.com
+                </a>
+            </div>
+            <div class="c-header__usuario-acoes">
+                <span>Acompanhe seu pedido</span>
+                <a href="login.html" class="c-btn--fantasma">Entrar</a>
+                <a href="cadastro.html" class="c-btn--fantasma">Cadastrar</a>
+            </div>
+        </div>
+    </div>
+</div>
+</header>  
+
+    <main id="conteudo-principal" class="pagina-form">
+        <form action="#" method="POST" class="c-form">
+            <h1 class="c-form__titulo">Crie sua Conta</h1>
+            
+            <div class="c-form__grupo">
+                <label for="nome" class="c-form__rotulo">Nome Completo</label>
+                <input type="text" id="nome" name="nome" class="c-form__input" required>
+            </div>
+
+            <div class="c-form__grupo">
+                <label for="email" class="c-form__rotulo">Email</label>
+                <input type="email" id="email" name="email" class="c-form__input" required>
+            </div>
+
+            <div class="c-form__grupo">
+                <label for="senha" class="c-form__rotulo">Senha</label>
+                <input type="password" id="senha" name="senha" class="c-form__input" required>
+            </div>
+            
+            <button class="c-btn c-btn--primario" type="submit" style="width: 100%;">Cadastrar</button>
+
+            <a href="login.html" class="c-form__link">Já tem uma conta? Faça login</a>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="c-footer">
+        <div class="container">
+            <div class="c-footer__grid">
+                <!-- Coluna 1: Sobre a Loja -->
+                <div class="c-footer__coluna">
+                    <a href="index.html">
+                        <img src="./images/logos/saude_e_forma_logo.webp" alt="Saúde & Forma" class="c-footer__logo">
+                    </a>
+                    <p class="c-footer__descricao">Sua loja de confiança em suplementos e artigos esportivos em Canoinhas, SC.</p>
+                    <div class="c-footer__redes-sociais">
+                        <a href="https://www.instagram.com/saudeeforma" target="_blank" rel="noopener noreferrer" aria-label="Nosso Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/saudeeformaa" target="_blank" rel="noopener noreferrer" aria-label="Nosso Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=554736226901" target="_blank" rel="noopener noreferrer" aria-label="Nosso Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <!-- Coluna 2: Institucional -->
+                <div class="c-footer__coluna">
+                    <h3 class="c-footer__titulo">Institucional</h3>
+                    <ul class="c-footer__links">
+                        <li><a href="#" class="c-footer__link">Sobre Nós</a></li>
+                        <li><a href="#" class="c-footer__link">Política de Privacidade</a></li>
+                        <li><a href="#" class="c-footer__link">Termos de Uso</a></li>
+                        <li><a href="#" class="c-footer__link">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <!-- Coluna 3: Categorias -->
+                <div class="c-footer__coluna">
+                    <h3 class="c-footer__titulo">Categorias</h3>
+                    <ul class="c-footer__links">
+                        <li><a href="#" class="c-footer__link">Whey Protein</a></li>
+                        <li><a href="#" class="c-footer__link">Creatina</a></li>
+                        <li><a href="#" class="c-footer__link">Barras de Proteína</a></li>
+                        <li><a href="#" class="c-footer__link">Hipercalórico</a></li>
+                        <li><a href="#" class="c-footer__link">Aminoácidos</a></li>
+                    </ul>
+                </div>
+                <!-- Coluna 4: Contato e Atendimento -->
+                <div class="c-footer__coluna">
+                    <h3 class="c-footer__titulo">Contato</h3>
+                    <ul class="c-footer__contato-lista">
+                        <li class="c-footer__contato-item"><i class="fas fa-map-marker-alt"></i><span>Rua Major Vieira, 401, Centro, Canoinhas - SC</span></li>
+                        <li class="c-footer__contato-item"><i class="fas fa-phone"></i><a href="tel:4736226901" class="c-footer__link">(47) 3622-6901</a></li>
+                        <li class="c-footer__contato-item"><i class="fas fa-envelope"></i><a href="mailto:saude_e_forma@hotmail.com" class="c-footer__link">saude_e_forma@hotmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="c-footer__bottom">
+                <div class="c-footer__pagamento">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa.png" alt="Visa">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard.png" alt="Mastercard">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pix.png" alt="Pix">
+                </div>
+                <p class="c-footer__copyright">&copy; 2025 Saúde & Forma. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

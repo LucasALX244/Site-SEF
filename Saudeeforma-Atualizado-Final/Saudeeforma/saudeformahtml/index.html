@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde & Forma - Suplementos e Artigos Esportivos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Header -->
+    <header class="c-header">
+        <!-- Top Bar -->
+        <div class="c-header__top-bar">
+            <div class="container">
+                <div class="c-header__top-bar-content">
+                    <a href="index.html" class="c-header__logo-link-top" aria-label="Página inicial de Saúde & Forma">
+                        <img src="./images/logos/saude_e_forma_logo.webp" alt="Logo da Saúde & Forma"
+                            class="c-header__logo-img">
+                    </a>
+                    <div class="c-header__contato-wrapper">
+                        <div class="c-header__contato">
+                            <a href="tel:+554736226901" class="c-header__contato-link"
+                                aria-label="Ligar para (47) 3622-6901">
+                                <i class="fas fa-phone" aria-hidden="true"></i> (47) 3622-6901
+                            </a>
+                            <a href="https://api.whatsapp.com/send/?phone=554736226901&text=Olá!"
+                                class="c-header__contato-link c-header__contato-link--whatsapp" target="_blank"
+                                rel="noopener noreferrer" aria-label="Enviar mensagem no WhatsApp para (47) 3622-6901">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> 47 3622-6901
+                            </a>
+                            <a href="mailto:saude_e_forma@hotmail.com" class="c-header__contato-link"
+                                aria-label="Enviar e-mail para saude_e_forma@hotmail.com">
+                                <i class="fas fa-envelope" aria-hidden="true"></i> E-mail
+                            </a>
+                        </div>
+                        <div>
+                    <div class="c-hero__feature-titulo">Frete Grátis</div>
+                    <div>Em compras acima de R$200,00</div>
+                </div>
+                        <div class="c-header__usuario-acoes">
+                            <a href="#" class="c-header__contato-link" aria-label="Acompanhar seu pedido">Acompanhe seu
+                                pedido</a>
+                            <a href="login.html" class="c-btn--fantasma" aria-label="Entrar na sua conta">Entrar</a>
+                            <a href="cadastro.html" class="c-btn--fantasma" aria-label="Criar uma 
+                            nova conta">Cadastrar</a>
+                            <a href="produtos.html" class="c-btn--primario"
+                                aria-label="Ver nossos produtos">Produtos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="c-header__main">
+            <div class="container">
+                <div class="c-header__main-content">
+                    <div class="c-busca">
+                        <input type="search" placeholder="Busque por..." class="c-busca__input" id="searchInput"
+                            aria-label="Campo de busca de produtos">
+                        <button class="c-busca__btn" id="searchBtn" aria-label="Buscar produtos">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="c-header__acoes">
+                        <button class="c-header__acao-btn" aria-label="Ver sua lista de desejos">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <button class="c-header__acao-btn c-header__theme-toggle" id="themeToggle" aria-label="Alternar modo escuro/claro">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <!-- Dropdown de Categorias -->
+                        <div class="c-header__categorias-dropdown">
+                            <button class="c-header__acao-btn c-header__categorias-btn" id="categoriasDropdownBtn" aria-label="Abrir menu de categorias" aria-expanded="false">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <div class="c-header__categorias-menu" id="categoriasMenu">
+                                <div class="c-header__categorias-header">
+                                    <h3>Categorias</h3>
+                                </div>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('lancamentos')">
+                                    <i class="fas fa-star"></i> Lançamentos
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('promocoes')">
+                                    <i class="fas fa-tag"></i> Promoções
+                                </a>
+                                
+                                <!-- Submenu Wheys com Dropdown -->
+                                <div class="c-header__categorias-submenu">
+                                    <button class="c-header__categorias-item c-header__categorias-submenu-toggle" id="wheySubmenuToggle">
+                                        <i class="fas fa-dumbbell"></i> Wheys <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                    <div class="c-header__categorias-submenu-items" id="wheySubmenuItems">
+                                        <a href="#" class="c-header__categorias-subitem" onclick="filterByCategory('whey')">Whey Protein Concentrado</a>
+                                        <a href="#" class="c-header__categorias-subitem" onclick="filterByCategory('whey-isolado')">Whey Protein Isolado</a>
+                                        <a href="#" class="c-header__categorias-subitem" onclick="filterByCategory('whey-hidrolisado')">Whey Protein Hidrolisado</a>
+                                    </div>
+                                </div>
+                                
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('creatina')">
+                                    <i class="fas fa-pills"></i> Creatina
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('barra-proteina')">
+                                    <i class="fas fa-cookie-bite"></i> Barra de Proteína
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('hipercalorico')">
+                                    <i class="fas fa-weight-hanging"></i> Hipercalóricos
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('aminoacidos')">
+                                    <i class="fas fa-atom"></i> Aminoácidos
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('vitaminas')">
+                                    <i class="fas fa-capsules"></i> Vitaminas
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('pre-treino')">
+                                    <i class="fas fa-fire"></i> Pré Treino
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('suplementos')">
+                                    <i class="fas fa-prescription-bottle"></i> Suplementos
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('moda')">
+                                    <i class="fas fa-tshirt"></i> Moda
+                                </a>
+                                <a href="#" class="c-header__categorias-item" onclick="filterByCategory('acessorios')">
+                                    <i class="fas fa-shopping-bag"></i> Acessórios
+                                </a>
+                            </div>
+                        </div>
+                        <button class="c-header__acao-btn" id="cartBtn"
+                            aria-label="Ver seu carrinho de compras com 0 itens">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="c-header__carrinho-badge" id="cartBadge">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="c-nav" aria-label="Navegação principal de categorias">
+            <div class="container">
+                <button class="c-nav__menu-btn" id="mobileMenuBtn" aria-label="Abrir menu de categorias"
+                    aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i> Menu
+                </button>
+                <div class="c-nav__content">
+                    <a href="#" class="c-nav__link">LANÇAMENTOS</a>
+                    <a href="#" class="c-nav__link">PROMOÇÕES</a>
+                    
+                    <!-- Dropdown WHEYS -->
+                    <div class="c-nav__dropdown">
+                        <a href="#" class="c-nav__link c-nav__dropdown-toggle">WHEYS <i class="fas fa-chevron-down"></i></a>
+                        <div class="c-nav__dropdown-menu">
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('whey')">Whey Protein Concentrado</a>
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('whey-isolado')">Whey Protein Isolado</a>
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('whey-hidrolisado')">Whey Protein Hidrolisado</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Dropdown CREATINA -->
+                    <div class="c-nav__dropdown">
+                        <a href="#" class="c-nav__link c-nav__dropdown-toggle">CREATINA <i class="fas fa-chevron-down"></i></a>
+                        <div class="c-nav__dropdown-menu">
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('creatina')">Creatina 100% Pura</a>
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('creatina-monohidrato')">Creatina Monohidrato</a>
+                            <a href="produtos-creatina.html" class="c-nav__dropdown-item">Creatina 100% Pura 120 Cápsulas Hardcore</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Dropdown SUPLEMENTOS -->
+                    <div class="c-nav__dropdown">
+                        <a href="#" class="c-nav__link c-nav__dropdown-toggle">SUPLEMENTOS <i class="fas fa-chevron-down"></i></a>
+                        <div class="c-nav__dropdown-menu">
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('barra-proteina')">Barra de Proteína</a>
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('hipercalorico')">Hipercalóricos</a>
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('aminoacidos')">Aminoácidos</a>
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('vitaminas')">Vitaminas</a>
+                            <a href="#" class="c-nav__dropdown-item" onclick="filterByCategory('pre-treino')">Pré Treino</a>
+                        </div>
+                    </div>
+                    
+	                    <!-- Dropdown MODA -->
+	                    <div class="c-nav__dropdown">
+	                        <a href="#" class="c-nav__link c-nav__dropdown-toggle">MODA <i class="fas fa-chevron-down"></i></a>
+	                        <div class="c-nav__dropdown-menu">
+	                            <a href="moda-fitness.html" class="c-nav__dropdown-item">Moda Fitness Feminina</a>
+	                            <a href="#" class="c-nav__dropdown-item">Moda Casual</a>
+	                            <a href="#" class="c-nav__dropdown-item">Acessórios de Moda</a>
+	                        </div>
+	                    </div>
+                    <a href="#" class="c-nav__link">ACESSÓRIOS</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    <!-- Carrossel -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <!-- Produto 1 -->
+            <div class="swiper-slide">
+                <div class="offer-timer" data-minutes="2" data-seconds="30">
+                    <span class="offer-timer-label">Oferta em:</span>
+                    <span class="offer-timer-time">02:30</span>
+                </div>
+                <img src="images/produtos/whey-900g.jpg" alt="Produto 1">
+                <p class="produto-titulo">Whey Protein Concentrado 900g</p>
+                <p class="preco">R$ 139,90</p>
+                <div class="c-produto__acoes">
+                    <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-comprar" onclick="addToCartCarousel(this)">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="swiper-slide">
+                <div class="offer-timer" data-minutes="3" data-seconds="15">
+                    <span class="offer-timer-label">Oferta em:</span>
+                    <span class="offer-timer-time">03:15</span>
+                </div>
+                <img src="images/produtos/MY WHEY-900G.webp" alt="Produto 2">
+                <p class="produto-titulo">MY WHEY 900g</p>
+                <p class="preco">R$ 104,09</p>
+                <div class="c-produto__acoes">
+                    <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-comprar" onclick="addToCartCarousel(this)">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="swiper-slide">
+                <div class="offer-timer" data-minutes="1" data-seconds="45">
+                    <span class="offer-timer-label">Oferta em:</span>
+                    <span class="offer-timer-time">01:45</span>
+                </div>
+                <img src="images/produtos/Whey- 1,8KG.jpg" alt="Produto 3">
+                <p class="produto-titulo">Whey Protein 1,8kg</p>
+                <p class="preco">R$ 272,48</p>
+                <div class="c-produto__acoes">
+                    <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-comprar" onclick="addToCartCarousel(this)">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="swiper-slide">
+                <div class="offer-timer" data-minutes="4" data-seconds="00">
+                    <span class="offer-timer-label">Oferta em:</span>
+                    <span class="offer-timer-time">04:00</span>
+                </div>
+                <img src="images/produtos/Whey-100.webp" alt="Produto 4">
+                <p class="produto-titulo">Whey Protein Concentrado 900g</p>
+                <p class="preco">R$ 147,14</p>
+                <div class="c-produto__acoes">
+                    <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-comprar" onclick="addToCartCarousel(this)">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="swiper-slide">
+                <div class="offer-timer" data-minutes="2" data-seconds="50">
+                    <span class="offer-timer-label">Oferta em:</span>
+                    <span class="offer-timer-time">02:50</span>
+                </div>
+                <img src="images/produtos/img-saude e forma whey.webp" alt="Produto 5">
+                <p class="produto-titulo">Whey Protein Isolado 900g</p>
+                <p class="preco">R$ 335,92</p>
+                <div class="c-produto__acoes">
+                    <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn-comprar" onclick="addToCartCarousel(this)">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botões de navegação -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- Paginação -->
+        <div class="swiper-pagination"></div>
+    </div>
+    </div>
+
+    <!-- JS do Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                480: { slidesPerView: 1 }
+            }
+        });
+
+        // Inicializar temporizadores de ofertas
+        function initOfferTimers() {
+            const timers = document.querySelectorAll('.offer-timer');
+            timers.forEach(timer => {
+                updateTimer(timer);
+                setInterval(() => updateTimer(timer), 1000);
+            });
+        }
+
+        function updateTimer(timerElement) {
+            let minutes = parseInt(timerElement.dataset.minutes);
+            let seconds = parseInt(timerElement.dataset.seconds);
+            
+            if (seconds === 0 && minutes === 0) {
+                timerElement.textContent = 'Oferta Expirada';
+                return;
+            }
+            
+            if (seconds === 0) {
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
+            
+            timerElement.dataset.minutes = minutes;
+            timerElement.dataset.seconds = seconds;
+            timerElement.querySelector('.offer-timer-time').textContent = 
+                String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+        }
+
+        // Iniciar temporizadores quando o documento estiver pronto
+        document.addEventListener('DOMContentLoaded', initOfferTimers);
+    </script>
+</body>
+
+</html>
+
+<!-- CSS principal do seu site -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- CSS do Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<style>
+
+    /* Ajuste do carrossel */
+    .swiper {
+        padding: 6px 0;
+    }
+
+    .swiper-slide {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        width: 200px;
+        height: 100px;
+        float: left;
+        height: auto;
+        margin-bottom: 8px;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .produto-titulo {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .preco {
+        color: green;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .btn-comprar {
+        background: #28a745;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .btn-comprar:hover {
+        background: #218838;
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Produtos em Destaque</h2>
+
+
+        <!-- Product Categories -->
+        <section class="secao-categorias container" aria-labelledby="category-title">
+            <h2 id="category-title" class="titulo-secao">Busque por Categoria</h2>
+            <div class="categorias-grid">
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Wheys">
+                    <div class="c-card-categoria__icone"><i class="fas fa-dumbbell" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Wheys</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Creatina">
+                    <div class="c-card-categoria__icone"><i class="fas fa-pills" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Creatina</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Barra de Proteína">
+                    <div class="c-card-categoria__icone"><i class="fas fa-cookie-bite" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Barra de Proteína</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Hipercalóricos">
+                    <div class="c-card-categoria__icone"><i class="fas fa-weight-hanging" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Hipercalóricos</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Aminoácidos">
+                    <div class="c-card-categoria__icone"><i class="fas fa-atom" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Aminoácidos</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Vitaminas">
+                    <div class="c-card-categoria__icone"><i class="fas fa-capsules" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Vitaminas</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Pré Treino">
+                    <div class="c-card-categoria__icone"><i class="fas fa-fire" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Pré Treino</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Suplementos">
+                    <div class="c-card-categoria__icone"><i class="fas fa-prescription-bottle" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="c-card-categoria__nome">Suplementos</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Moda">
+                    <div class="c-card-categoria__icone"><i class="fas fa-tshirt" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Moda</h3>
+                </a>
+                <a href="#" class="c-card-categoria" aria-label="Ver categoria Acessórios">
+                    <div class="c-card-categoria__icone"><i class="fas fa-shopping-bag" aria-hidden="true"></i></div>
+                    <h3 class="c-card-categoria__nome">Acessórios</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Product -->
+        <section class="secao-destaque" aria-labelledby="featured-product-title">
+            <div class="container">
+                <h2 id="featured-product-title" class="titulo-secao">Produto em Destaque</h2>
+                <article class="c-card-produto" aria-labelledby="product-name-1">
+                    <div class="c-card-produto__imagem-wrapper">
+                        <img src="./images/produtos/creatina_hardcore_integralmedica.webp"
+                            alt="Pote de Creatina Hardcore da Integralmédica com 120 cápsulas."
+                            class="c-card-produto__imagem">
+                    </div>
+                    <div class="c-card-produto__info">
+                        <h3 id="product-name-1" class="c-card-produto__titulo">Creatina 100% Pura 120 Cápsulas Hardcore
+                        </h3>
+                        <div>
+                            <span class="c-card-produto__preco-antigo">De R$ 53,90</span>
+                            <span class="c-card-produto__desconto">17% OFF</span>
+                        </div>
+                        <div class="c-card-produto__preco-atual">Por R$ 44,74</div>
+                        <a href="#" class="c-btn c-btn--primario" style="margin-top: 2.4rem; width: 100%;"
+                            aria-label="Ver detalhes do produto Creatina Hardcore">Ver Produto</a>
+                             <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">Tamanho:</label>
+                            <select class="option-select" id="sizeSelect">
+                                <option value="120">120 Cápsulas</option>
+                            </select>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label class="option-label">Sabor:</label>
+                            <select class="option-select" id="flavorSelect">
+                                <option value="sem-sabor">Sem Sabor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="purchase-controls">
+                        <div class="quantity-control">
+                            <button class="qty-btn" id="decreaseBtn">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span class="quantity" id="quantity">1</span>
+                            <button class="qty-btn" id="increaseBtn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn" id="addToCartBtn">
+                            Adicionar ao carrinho
+                        </button>
+                    <div>
+                        <button class="btn-comprar" onclick="addToCartCarousel(this)">Adicionar ao carrinho</button>
+                    </div>
+
+
+                    <div class="product-benefits">
+                        <div class="benefit">✓ Proporciona ganhos de força</div>
+                        <div class="benefit">✓ Melhora a performance nos treinos</div>
+                        <div class="benefit">✓ Aumenta a energia muscular</div>
+                        <div class="benefit">✓ Ganho de massa muscular e recuperação</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                    </div>
+                </article>
+            </div>
+        </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="c-footer">
+            <div class="container">
+                <div class="c-footer__grid">
+                    <!-- Coluna 1: Institucional -->
+                    <div class="c-footer__coluna">
+                        <h3 class="c-footer__titulo">Institucional</h3>
+                        <ul class="c-footer__links">
+                            <li><a href="#" class="c-footer__link">Sobre Nós</a></li>
+                            <li><a href="#" class="c-footer__link">Política de Privacidade</a></li>
+                            <li><a href="#" class="c-footer__link">Termos de Uso</a></li>
+                            <li><a href="#" class="c-footer__link">Trabalhe Conosco</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna 2: Categorias -->
+                    <div class="c-footer__coluna">
+                        <h3 class="c-footer__titulo">Categorias</h3>
+                        <div class="c-footer__links-container">
+                            <ul class="c-footer__links">
+                                <li><a href="#" class="c-footer__link">Lançamentos</a></li>
+                                <li><a href="#" class="c-footer__link">Promoções</a></li>
+                                <li><a href="#" class="c-footer__link">Wheys</a></li>
+                                <li><a href="#" class="c-footer__link">Creatina</a></li>
+                                <li><a href="#" class="c-footer__link">Barra de Proteína</a></li>
+                                <li><a href="#" class="c-footer__link">Hipercalóricos</a></li>
+                            </ul>
+                            <ul class="c-footer__links">
+                                <li><a href="#" class="c-footer__link">Aminoácidos</a></li>
+                                <li><a href="#" class="c-footer__link">Vitaminas</a></li>
+                                <li><a href="#" class="c-footer__link">Pré Treino</a></li>
+                                <li><a href="#" class="c-footer__link">Suplementos</a></li>
+                                <li><a href="#" class="c-footer__link">Moda</a></li>
+                                <li><a href="#" class="c-footer__link">Acessórios</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 3: Contato e Atendimento -->
+                    <div class="c-footer__coluna">
+                        <h3 class="c-footer__titulo">Contato</h3>
+                        <ul class="c-footer__contato-lista">
+                            <li class="c-footer__contato-item">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <a href="tel:4736226901" class="c-footer__link">(47) 3622-6901</a>
+                            </li>
+                            <li class="c-footer__contato-item">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                <a href="https://api.whatsapp.com/send/?phone=554736226901" target="_blank"
+                                    rel="noopener noreferrer" class="c-footer__link">47 3622-6901</a>
+                            </li>
+                            <li class="c-footer__contato-item">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:saude_e_forma@hotmail.com"
+                                    class="c-footer__link">saude_e_forma@hotmail.com</a>
+                            </li>
+                            <li class="c-footer__contato-item c-footer__social-item">
+                                <a href="https://www.instagram.com/saudeeforma" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Visite nosso Instagram @saudeeforma">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    <span>@saudeeforma</span>
+                                </a>
+                            </li>
+                            <li class="c-footer__contato-item c-footer__social-item">
+                                <a href="https://www.facebook.com/saudeeformaa" target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Visite nosso Facebook facebook.com/saudeeformaa">
+                                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    <span>facebook.com/saudeeformaa</span>
+                                </a>
+                            </li>
+                            <li class="c-footer__contato-item">
+                                <a href="https://maps.app.goo.gl/wJ53mU1K9bcGgL8X6" class="c-footer__map-link"
+                                    target="_blank" rel="noopener noreferrer"
+                                    aria-label="Ver nosso endereço no Google Maps">
+                                    <svg class="c-footer__map-icon" viewBox="0 0 384 512"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path fill="#fbbc05"
+                                            d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0z" />
+                                        <path fill="#34a853"
+                                            d="M192 0C86 0 0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0C267 435 384 279.4 384 192C384 86 298 0 192 0z" />
+                                        <path fill="#4285f4"
+                                            d="M192 0c-106 0-192 86-192 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0C267 435 384 279.4 384 192C384 86 298 0 192 0z" />
+                                        <path fill="#ea4335"
+                                            d="M192 0c-106 0-192 86-192 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0C267 435 384 279.4 384 192C384 86 298 0 192 0z" />
+                                        <circle fill="#ffffff" cx="192" cy="192" r="72" />
+                                    </svg>
+                                    <span>Rua Major Vieira, 401, Centro, Canoinhas - SC</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="c-footer__bottom">
+                    <div class="c-footer__pagamento" aria-label="Formas de pagamento aceitas">
+                        <img src="https://logospng.org/download/visa/logo-visa-2048.png" alt="Logo da bandeira Visa">
+                        <img src="https://logospng.org/download/mastercard/logo-mastercard-color-2048.png"
+                            alt="Logo da bandeira Mastercard">
+                        <img src="https://logospng.org/download/pix/logo-pix-1024.png" alt="Logo do Pix">
+                    </div>
+                    <p class="c-footer__copyright">CNPJ: 13.779.804/0001-82 &copy; 2025 Saúde & Forma. Todos os direitos
+                        reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="c-mobile-menu-overlay" id="mobileMenuOverlay" role="dialog" aria-modal="true"
+            aria-labelledby="mobileMenuTitle">
+            <div class="c-mobile-menu">
+                <div class="c-mobile-menu__header">
+                    <h2 id="mobileMenuTitle" class="c-mobile-menu__titulo">Categorias</h2>
+                    <button class="c-mobile-menu__fechar-btn" id="closeMenuBtn" aria-label="Fechar menu de categorias">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="c-mobile-menu__nav" aria-label="Menu de categorias mobile">
+                    <a href="#" class="c-mobile-menu__link">LANÇAMENTOS</a>
+                    <a href="#" class="c-mobile-menu__link">PROMOÇÕES</a>
+                    <a href="#" class="c-mobile-menu__link">WHEYS</a>
+                    <a href="#" class="c-mobile-menu__link">CREATINA</a>
+                    <a href="#" class="c-mobile-menu__link">BARRA DE PROTEÍNA</a>
+                    <a href="#" class="c-mobile-menu__link">HIPERCALÓRICOS</a>
+                    <a href="#" class="c-mobile-menu__link">AMINOÁCIDOS</a>
+                    <a href="#" class="c-mobile-menu__link">VITAMINAS</a>
+                    <a href="#" class="c-mobile-menu__link">PRÉ TREINO</a>
+                    <a href="#" class="c-mobile-menu__link">SUPLEMENTOS</a>
+                    <a href="#" class="c-mobile-menu__link">MODA</a>
+                    <a href="#" class="c-mobile-menu__link">ACESSÓRIOS</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script>
+            // Script do Carrossel
+            let slideIndex = 0;
+            showSlides();
+            function showSlides() {
+                let slides = document.getElementsByClassName("c-carrossel__slide");
+                if (slides.length === 0) return;
+                for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 3000);
+            }
+
+            // Script do Menu Mobile
+            document.addEventListener('DOMContentLoaded', () => {
+                const menuBtn = document.getElementById('mobileMenuBtn');
+                const closeMenuBtn = document.getElementById('closeMenuBtn');
+                const overlay = document.getElementById('mobileMenuOverlay');
+                const openMenu = () => {
+                    overlay.classList.add('is-open');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                };
+                const closeMenu = () => {
+                    overlay.classList.remove('is-open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                };
+                if (menuBtn) { menuBtn.addEventListener('click', openMenu); }
+                if (closeMenuBtn) { closeMenuBtn.addEventListener('click', closeMenu); }
+                if (overlay) {
+                    overlay.addEventListener('click', (e) => {
+                        if (e.target === overlay) { closeMenu(); }
+                    });
+                }
+            });
+        </script>
+</body>
+
+</html>

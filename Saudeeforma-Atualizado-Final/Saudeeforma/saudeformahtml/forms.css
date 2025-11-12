@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Componente: Formulário (.c-form)
+   ========================================================================== */
+.pagina-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espaco-xl) var(--espaco-md);
+    background-color: var(--cor-fundo-secundario);
+    min-height: calc(100vh - 200px); /* Ajustar altura do header/footer */
+}
+
+.c-form {
+    background: var(--cor-fundo);
+    padding: var(--espaco-lg);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    width: 100%;
+    max-width: 500px;
+}
+
+.c-form__titulo {
+    font-size: var(--fs-xl);
+    text-align: center;
+    margin-bottom: var(--espaco-lg);
+}
+
+.c-form__grupo {
+    margin-bottom: var(--espaco-lg);
+}
+
+.c-form__rotulo {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--espaco-sm);
+}
+
+.c-form__input {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    font-size: var(--fs-base);
+    transition: var(--transicao-padrao);
+}
+
+.c-form__input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(195, 1, 12, 0.2);
+}
+
+.c-form__link {
+    display: block;
+    text-align: center;
+    margin-top: var(--espaco-md);
+    color: var(--cor-primaria);
+    font-weight: 500;
+}
+
+.c-form__link:hover {
+    text-decoration: underline;
+}

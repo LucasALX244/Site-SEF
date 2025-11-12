@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde & Forma - Produtos</title>
+
+  <!-- CSS principal do seu site -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- CSS do Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    /* Ajuste do carrossel */
+    .swiper {
+      padding: 20px 0;
+    }
+
+    .swiper-slide {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .swiper-slide img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .produto-titulo {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .preco {
+      color: green;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .btn-comprar {
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-comprar:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Produtos em Destaque</h2>
+
+    <!-- Carrossel -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        
+        <!-- Produto 1 -->
+        <div class="swiper-slide">
+          <img src="imagens/produto1.jpg" alt="Produto 1">
+          <p class="produto-titulo">Whey Protein Concentrado 900g</p>
+          <p class="preco">R$ 139,90</p>
+          <div class="c-produto__acoes">
+            <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="btn-comprar">Adicionar ao carrinho</button>
+        </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="swiper-slide">
+          <img src="imagens/produto2.jpg" alt="Produto 2">
+          <p class="produto-titulo">MY WHEY 900g</p>
+          <p class="preco">R$ 104,09</p>
+          <div class="c-produto__acoes">
+            <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="btn-comprar">Adicionar ao carrinho</button>
+        </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="swiper-slide">
+          <img src="imagens/produto3.jpg" alt="Produto 3">
+          <p class="produto-titulo">Whey Protein 1,8kg</p>
+          <p class="preco">R$ 272,48</p>
+          <div class="c-produto__acoes">
+            <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="btn-comprar">Adicionar ao carrinho</button>
+        </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="swiper-slide">
+          <img src="imagens/produto4.jpg" alt="Produto 4">
+          <p class="produto-titulo">Whey Protein Concentrado 900g</p>
+          <p class="preco">R$ 147,14</p>
+          <div class="c-produto__acoes">
+            <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="btn-comprar">Adicionar ao carrinho</button>
+        </div>
+        </div>
+
+        <!-- Produto 5 -->
+        <div class="swiper-slide">
+          <img src="imagens/produto5.jpg" alt="Produto 5">
+          <p class="produto-titulo">Whey Protein Isolado 900g</p>
+          <p class="preco">R$ 335,92</p>
+          <div class="c-produto__acoes">
+            <button class="c-produto__favorito-btn" onclick="toggleFavorite(this)" aria-label="Adicionar aos favoritos">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="btn-comprar">Adicionar ao carrinho</button>
+        </div>
+        </div>
+
+      </div>
+
+      <!-- Botões de navegação -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <!-- JS do Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        480: { slidesPerView: 1 }
+      }
+    });
+  </script>
+</body>
+</html>
